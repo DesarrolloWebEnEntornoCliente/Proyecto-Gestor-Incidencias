@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Gestor de incidencias JavaScript</h1>
+
+        <h2>Añadir nueva incidencia</h2>
+
+
+    
+        <p><b>Descripcion</b></p>
+
+
+        <input type="text" id="incidencia" name="incidencia" placeholder="Describa la incidencia..." autofocus>
+
+        <span id="errorIncidencia" class="errorMensaje"></span>
+
+        <p><b>Gravedad</b></p>
+        
+        <select name="gravedad" id="gravedad">
+            <option selected value="Baja">Baja</option>
+            <option value="Media">Media</option>
+            <option value="Alta">Alta</option>
+        </select>
+        <p><b>Asignada a </b></p>
+
+        <input type="text" placeholder="Asigna a un responsable..." id="responsable"><br>
+
+        <input type="submit" value="Añadir" id="añadir">
+
+
+    </div>
+
+</body>
+
+<script src="js/validacion.js"></script>
+
+</html>
