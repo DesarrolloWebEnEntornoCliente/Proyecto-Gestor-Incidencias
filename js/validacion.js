@@ -21,12 +21,14 @@ function validacion(evento) {
         console.log("Responsable: "+responsable);
         document.getElementById('incidencia').value='';
         document.getElementById('responsable').value='';
+        document.getElementById('errorIncidencia').innerHTML = "";
         
         
         
         
 
     } else {
+        
         document.getElementById('errorIncidencia').innerHTML = "Rellene el campo descripcion";
         console.log("Rellene el campo descripción");
     }
