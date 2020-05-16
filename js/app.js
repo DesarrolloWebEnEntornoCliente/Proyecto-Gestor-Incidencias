@@ -1,37 +1,45 @@
-var idIncidencia= 0;
-var idResponsable= 0;
+const nuevaIncidencia = contadorIncidencias(0);
+var idResponsable = 0;
 
+function contadorIncidencias(empezar) {
+
+    var numero = empezar;
+    return function () {
+        numero++;
+        return numero;
+    }
+}
 
 class Incidencia{
-    constructor(descripcion,gravedad,asignada,abierta,id) {
+    constructor(descripcion,gravedad,asignada,abierta) {
         
-        this.id=idIncidencia++;
+        this.id=nuevaIncidencia();
         this.descripcion=descripcion;
         this.gravedad=gravedad;
-        this.asignada=asignada;
+        this.asignada= new Responsable(asignada,this.id,idResponsable);
+        this.abierta=false;
+    }
+    
+    
+    
+    asignarResponsable(responsable){
+        
+        
+        this.asignada=responsable;
+    }
+    
+    quitarResponsable(){
+        this.asignada=null;
+        
+    }
+    
+    cerrarIncidencia(){
         this.abierta=false;
         
-        var llamadaObjetoResponsable= new Responsable(asignada,idIncidencia,idResponsable);
     }
     
-    asignarResponsable(id,responsable){
-        
-        
-        return arrayIncidencias[id].asignada=responsable;
-    }
-    
-    quitarResponsable(id){
-        return arrayIncidencias[id].asignada="";
-        
-    }
-    
-    cerrarIncidencia(id){
-        return arrayIncidencias[id].abierta=false;
-        
-    }
-    
-     abrirIncidencia(id){
-         return arrayIncidencias[id].abierta=true; 
+     abrirIncidencia(){
+         this.abierta=true; 
     }
        
 }
@@ -44,14 +52,15 @@ class Responsable{
         this.idResp=idResponsable++;
     }
     
-    asignarIncidencia(idInc,responsable){
+    asignarIncidencia(objetoIncidencia){
         
-         return arrayIncidencias[idInc].asignada=responsable
+         incidencia.asignada=this;
         
     }
     
-    quitarIncidencia(idInc){
-        return arrayIncidencias[idInc].asignada="";
+    quitarIncidencia(objetoIncidencia){
+        
+        incidencia.asignada=this;
         
     }
 }
