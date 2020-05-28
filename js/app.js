@@ -42,6 +42,7 @@ class Incidencia {
         this.abierta = true;
     }
 
+    //
     creacionDom() {
         
         
