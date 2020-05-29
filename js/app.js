@@ -43,7 +43,7 @@ class Incidencia {
     }
 
     //
-    creacionDom() {
+    creacionDom(objetoIncidencia) {
         
         
         let div = document.createElement('div');
@@ -65,7 +65,7 @@ class Incidencia {
         let botonCerrar = document.createElement('button');
         botonCerrar.innerHTML = "Cerrar";
         botonCerrar.setAttribute('class', 'cerrar')
-        botonCerrar.addEventListener('click', cerrarIncidenciaDOM);
+        botonCerrar.addEventListener('click', cerrarIncidencia);
         
         div.appendChild(botonCerrar);
         
@@ -77,8 +77,18 @@ class Incidencia {
         
         div.appendChild(botonEliminar);
         
+        if(this.abierta == false){
+            let botonAbrir = document.createElement('button');
+        botonAbrir.innerHTML = "Abrir";
+        botonAbrir.setAttribute('class', 'Abrir')
+        botonAbrir.addEventListener('click', abrirIncidencia);
         
-        div.setAttribute('id', this.id);
+        div.appendChild(botonAbrir);
+            
+        }
+        
+        
+        div.setAttribute('data_incidencia', this.id);
 
 
         
