@@ -7,7 +7,7 @@ Crear un fichero
 **db.json**
 
 que sera el fichero que nos dara datos y los cambiaremos en el:
-
+```
 {
   "Incidencia": [
     {
@@ -42,6 +42,7 @@ que sera el fichero que nos dara datos y los cambiaremos en el:
     }
   ]
 }
+```
 
 ## Inicializar JSON-SERVER
 
