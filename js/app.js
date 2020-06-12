@@ -1,5 +1,5 @@
 const nuevaIncidencia = contadorIncidencias(0);
-var idResponsable = 0;
+var idResponsable = 1;
 
 function contadorIncidencias(empezar) {
 
@@ -11,13 +11,13 @@ function contadorIncidencias(empezar) {
 }
 
 class Incidencia {
-    constructor(descripcion, gravedad, asignada = null, abierta) {
+    constructor(descripcion, gravedad, asignada, abierta,id) {
 
-        this.id = nuevaIncidencia();
         this.descripcion = descripcion;
         this.gravedad = gravedad;
         this.asignada = new Responsable(asignada, this.id, idResponsable);
-        this.abierta = false;
+        this.abierta = true;
+        this.id = nuevaIncidencia();
     }
 
 
@@ -77,16 +77,18 @@ class Incidencia {
         
         div.appendChild(botonEliminar);
         
-        if(this.abierta == false){
+        
+        //Boton abrir que aparece en las incidencias cerradas.
+        if (!this.abierta) {
+            botonCerrar.style.display="none";
             let botonAbrir = document.createElement('button');
-        botonAbrir.innerHTML = "Abrir";
-        botonAbrir.setAttribute('class', 'Abrir')
-        botonAbrir.addEventListener('click', abrirIncidencia);
-        
-        div.appendChild(botonAbrir);
-            
+            botonAbrir.innerHTML = "Abrir";
+            botonAbrir.setAttribute('class', 'Abrir')
+            botonAbrir.addEventListener('click', abrirIncidencia);
+
+            div.appendChild(botonAbrir);
+
         }
-        
         
         div.setAttribute('data_incidencia', this.id);
 
@@ -109,13 +111,13 @@ class Responsable{
     
     asignarIncidencia(objetoIncidencia){
         
-         incidencia.asignada=this;
+         objetoIncidencia.asignada=this;
         
     }
     
     quitarIncidencia(objetoIncidencia){
         
-        incidencia.asignada=this;
+        objetoIncidencia.asignada=this;
         
     }
 }

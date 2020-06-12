@@ -1,0 +1,34 @@
+{
+  "Incidencia": [
+    {
+      "descripcion": "Responsable1",
+      "gravedad": "Baja",
+      "asignada": {
+        "nombre": "Responsable1",
+        "idResp": 1
+      },
+      "abierta": true,
+      "id": 1
+    },
+    {
+      "descripcion": "Responsable2",
+      "gravedad": "Media",
+      "asignada": {
+        "nombre": "Responsable1",
+        "idResp": 2
+      },
+      "abierta": true,
+      "id": 2
+    },
+    {
+      "descripcion": "Responsable 3",
+      "gravedad": "Alta",
+      "asignada": {
+        "nombre": "Responsable1",
+        "idResp": 3
+      },
+      "abierta": true,
+      "id": 3
+    }
+  ]
+}
